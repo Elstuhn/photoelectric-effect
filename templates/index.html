@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="../static/sketch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js" integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../static/index.css">
+  </head>
+  <body>
+    <main class="container">
+      <section id="overarching-div">
+        <div id="info-div">
+          <p class="info">Work Function: <span class="content" id="v0"></span></p>
+
+          <p class="info">
+            Energy of Photon:
+            <span class="content" id="v"></span>
+          </p>
+          <p class="info">
+            Speed of Ejected Electron:
+            <span class="content" id="ke"></span>
+          </p>
+        </div>
+        <div id="control-div">
+          <div class="form-control">
+            <label>frequency of proton: </label>
+            <input type="text" id="fp">
+          </div>
+          <div class="form-control">
+            <label for="">threshold frequency: </label>
+            <input type="text" id="wf">
+          </div>
+          <div class="form-control">
+            <label>unit of threshold frequency</label>
+            <select name="units" id="unitwf">
+              <option value="1">Hertz (Hz)</option>
+              <option value="1000">kiloHertz (KHz)</option>
+              <option value="1000000">megaHertz (MHz)</option>
+              <option value="1000000000">gigaHertz (GHz)</option>
+              <option value="1000000000000">teraHertz (THz)</option>
+            </select>
+          </div>
+          <div class="form-control">
+            <label>unit of proton frequency</label>
+            <select name="units" id="unitpf">
+              <option value="1">Hertz (Hz)</option>
+              <option value="1000">kiloHertz (KHz)</option>
+              <option value="1000000">megaHertz (MHz)</option>
+              <option value="1000000000">gigaHertz (GHz)</option>
+              <option value="1000000000000">teraHertz (THz)</option>
+            </select>
+          </div>
+          <br>
+            <div style="display: flex" id="equation-control">
+              <button id="equation-btn" style="margin-right: 1rem">
+                visualize
+              </button>
+            </div>
+            <b id="placeholder"></b>
+          </div>
+        </div>
+      </section>
+      <div id="canvas"></div>
+      <img src="../static/torchlight2.png" id="torchlight">
+    </main>
+  </body>
+</html>
