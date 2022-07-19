@@ -78,8 +78,8 @@ function updatephotons() {
     photons[i][1] = math.evaluate(photonpaths[count].replaceAll("x", photons[i][0]));
     circle(photons[i][0], photons[i][1], 10);
     if ((photons[i][1] - height_/1.15) >= 0) {
-      photons[i] = originphotons[i]
-      electrons.push(baseElectrons[i])
+      photons[i] = originphotons[i];
+      ke ? electrons.push(baseElectrons[i]) : 0;
     }
     count++;
     if (count == 3) {
