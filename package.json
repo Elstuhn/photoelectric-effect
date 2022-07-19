@@ -1,0 +1,19 @@
+{
+  "name": "photoelectric-effect",
+  "version": "1.0.0",
+  "description": "photoelectric effect",
+  "main": "sketch.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elstuhn/photoelectric-effect.git"
+  },
+  "author": "Elston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elstuhn/photoelectric-effect/issues"
+  },
+  "homepage": "https://github.com/Elstuhn/photoelectric-effect#readme"
+}
