@@ -4,6 +4,7 @@
     <script src="../static/sketch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js" integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="../static/index.css">
+    <script src="https://kit.fontawesome.com/97baa51800.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <main class="container">
@@ -22,7 +23,10 @@
         </div>
         <div id="control-div">
           <div class="form-control">
-            <label>frequency of proton: </label>
+            <label>frequency of photon: </label>
+            <i class="fa-solid fa-circle-question" id="questionmark">
+              <span class="tooltip">Frequency can be typed as 5*10^14 if it's a really big number</span>
+            </i>
             <input type="text" id="fp">
           </div>
           <div class="form-control">
@@ -58,8 +62,9 @@
                 stop
               </button>
             </div>
-            <b id="placeholder"></b>
+            <br>
           </div>
+          <b id="placeholder" class="text-break"></b>
         </div>
       </section>
       <div id="canvas"></div>

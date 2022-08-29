@@ -50,7 +50,7 @@ function draw() {
 function updateElectrons() {
   let del = [];
   for (var i = 0; i < electrons.length; i++) {
-    electrons[i][0] += ke*(4e+30);
+    electrons[i][0] += 3;
     electrons[i][1] = math.evaluate(electronpaths[i%3].replaceAll("x", electrons[i][0]));
     circle(electrons[i][0], electrons[i][1], 10);
     if (electrons[i][0] >= width_) {
@@ -74,7 +74,7 @@ function updatephotons() {
     [width_/1.882, height_/1.15]
   ]
   for (var i = 0; i < photons.length; i++) {
-    photons[i][0] += (v*h)*(8e+30);
+    photons[i][0] += 3;
     photons[i][1] = math.evaluate(photonpaths[count].replaceAll("x", photons[i][0]));
     circle(photons[i][0], photons[i][1], 10);
     if ((photons[i][1] - height_/1.15) >= 0) {
@@ -88,18 +88,30 @@ function updatephotons() {
   }
 }
 
-function visualize() {
-  document.getElementById("placeholder").innerHTML = "";
-  fp = parseInt(document.getElementById("fp").value);
-  wf = parseInt(document.getElementById("wf").value);
+function checkparams() {
+  fp = math.evaluate(document.getElementById("fp").value);
+  wf = math.evaluate(document.getElementById("wf").value);
   unitwf = parseInt(document.getElementById("unitwf").value);
   unitpf = parseInt(document.getElementById("unitpf").value);
   v = unitpf * fp;
   v0 = unitwf * wf;
+  if (8*10**14 < v || v < 4*10**14) {
+    document.getElementById("placeholder").innerHTML = "Error: The range of the frequency of visible light is between (4 to 8)x10^14Hz";
+    return 0;
+  }
+  return 1;
+}
+
+function visualize() {
+  if (!checkparams()) {
+    return;
+  }
+  document.getElementById("placeholder").innerHTML = "";
   document.getElementById("v").innerHTML = `${v*h} J`;
   document.getElementById("v0").innerHTML = `${v0*h} J`;
   if (v0 >= v) {
     ke = 0;
+    document.getElementById("placeholder").innerHTML = "Error: The threshold frequency cannot be lower than photon frequency for something to happen";
   } else {
     ke = h * (v-v0);
     photonstart = true;
